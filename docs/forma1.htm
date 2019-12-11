@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="new 2.css" >
+<meta charset="utf-8">
+</head>
+<body>
+<div ><strong class="mycolor">Φόρμα επικοινωνίας</strong></div>
+<form action="mailto:someone@example.com" method="post" enctype="text/plain">
+<table>
+<tr><td>
+Ονοματεπώνυμο*</td><td> <input id="name" type="text" name="name"  ></td></tr>
+<tr><td>Τηλέφωνο</td> <td><input id="phone"type="text" name="phone" ></td></tr>
+<tr><td>E-mail*</td> <td> <input  id="email"type="text" name="email" ></td></tr>
+<tr><td>Αίτημα,<br><br>Ερώτημα*</td>
+<td><textarea id="ar"name="ar" rows="10"  cols="100"> </textarea></td></tr>
+
+</table>
+<input type="reset" value="Καθαρισμός στοιχείων"><input id="btn" type="button"  value="Αποστολή στοιχείων"style="color:black">
+<br>Τα πεδία με * είναι υποχρεωτικά.
+</form>
+
+<script>
+ function check1(nam,phon,emai,a)
+    {
+	 if (nam=="" ||  emai=="" || a==""){
+		 alert("ΠΑΡΑΚΑΛΩ ΣΥΜΠΛΗΡΩΣΤΕ ΟΛΑ ΤΑ ΥΠΟΧΡΕΩΤΙΚΑ ΠΕΔΙΑ");
+	 }
+	 else{
+	     var myWindow = window.open("", "MsgWindow", "width=600, height=450");
+		myWindow.document.writeln("<h1 style='background-color:blue; color:white;'>Είστε σίγουροι ότι θέλετε να αποστείλετε το παρακάτω mail;</h1>");
+		myWindow.document.writeln("<h1>Ονοματεπώνυμο*:"+ '&nbsp;'+nam +"</h1>");
+		 myWindow.document.writeln("<h1>Τηλέφωνο:"+ '&nbsp;'+ phon +"</h1>");
+		 myWindow.document.writeln("<h1>E-mail*:"+ '&nbsp;'+ emai +"</h1>");
+		 myWindow.document.writeln("<h1>Αίτημα,"+ '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+  a +'<br>'+'Ερώτημα*:'+"</h1>");
+		 myWindow.document.write("<input type='button' id='can' value='Aκύρωση'>");
+		 var url21="mailto:basilisgiata@gmail.com "+"?subject=αυτοματη%20φορμα%20επικοινωνιας&body=" +  "Ονοματεπώνυμο*:"+ nam +"  Τηλέφωνο:" + phon +"                                                                                        "+ a;
+		 myWindow.document.write('<input type="button" id="yes" value="Aποστολη"  >');
+		myWindow.document.getElementById('yes').onclick= function(){sel()};
+		myWindow.document.getElementById('can').onclick= function(){sol()};
+		  function sel(){
+		   location.href=url21;
+		  }
+		  function sol(){
+		  //location.href="forma1.htm";
+		  myWindow.close();
+		  }
+		
+	}
+ }
+ function ClickMe ()
+{
+check1(document.getElementById('name').value,
+document.getElementById('phone').value,document.getElementById('email').value
+,document.getElementById('ar').value);
+}
+function sendemail(){
+var url1="href='mailto:"+"Ονοματεπώνυμο*:"+ nam +"Τηλέφωνο:" + phon + a+"'";
+location.href=url1;
+}
+
+document.getElementById('btn').onclick= function(){ClickMe()};
+
+ </script>
+</body>
+</html>
