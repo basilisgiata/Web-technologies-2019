@@ -1,0 +1,32 @@
+<style>
+h1 {text-align:center;
+color:white;}
+table,td{ color: 
+darkblue;
+    font-size: 25px;
+    border: 2px solid silver;
+	background-color:lightblue;
+
+background-color:light blue;
+}
+div {color:white;border:8px solid blue;
+font-size:35px;background-color:darkblue;}
+form {font-size:35px;color:darkblue;}
+ input{font-size:35px;}
+ p{color:white;background-color:darkblue;font-size:40px;border:8px solid blue;}
+ body {background-color: #00AAA0;}
+ input[maxlength] {border: 1px solid red;}
+ input[type="text"] {	 color: red;}
+ a:link {color:green}
+ a:visited {color:gray}
+ a:hover {color:silver; font-style:italic}
+ div > p {color: blue;}
+ p + h2 {color:navy;}
+ * {color: silver; }
+ input[type="submit"]{color:black;}
+ input[type="reset"]{color:black;}
+ strong {color:darkblue;}
+ textarea {color: red;}
+ .mycolor {color:white;}
+ 
+</style>
